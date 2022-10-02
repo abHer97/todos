@@ -103,6 +103,24 @@
 		}
 	};
 
+	Store.prototype.remove = function (id, callback) {
+		var data = JSON.parse(localStorage[this._dbName]);
+		var todos = data.todos;
+		var updated = []
+
+		callback = callback || function () { };
+
+		for (var i = 0; i < todos.length; i++) {
+			if (todos[i].id !== id) {
+				updated.push(todos[i]);
+			}
+		}
+
+		data.todos = updated;
+		localStorage[this._dbName] = JSON.stringify(data);
+		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+	}
+
 	/**
 	 * Will drop all storage and start fresh
 	 *
