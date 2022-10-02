@@ -29,6 +29,14 @@
 		this.storage.save(newItem, callback);
 	};
 
+	Model.prototype.remove = function (id, callback) {
+		var id = id || 0;
+		
+		callback = callback || function () {};
+
+		this.storage.remove(id, callback);
+	}
+
 	/**
 	 * Finds and returns a model in storage. If no query is given it'll simply
 	 * return everything. If you pass in a string or number it'll look that up as
