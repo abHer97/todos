@@ -97,7 +97,10 @@
                     completed: this.checked
                 });
             });
-
+        } else if(event === 'deleteTodo') {
+            $live('#todo-list .destroy', 'click', function () {
+                handler(that._itemId(this))
+            })
         }
     };
 
