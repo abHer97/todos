@@ -24,6 +24,10 @@
 		that.view.bind('toggleAll', function (status) {
 			that.toggleAll(status.completed);
 		});
+
+		that.view.bind('deleteTodo', function (id) {
+			that.deleteItem(id)
+		})
 	}
 
 	/**
@@ -84,6 +88,14 @@
 			that._filter(true);
 		});
 	};
+
+	Controller.prototype.deleteItem = function (id) {
+		var that = this;
+
+		that.model.remove(id, function (todos) {
+			that._filter(true);
+		})
+	}
 
 	/**
 	 * Give it an ID of a model and a checkbox and it will update the item
