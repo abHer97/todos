@@ -29,6 +29,11 @@
 		this.storage.save(newItem, callback);
 	};
 
+	/**
+	 * 
+	 * @param {number} id ID of the todo to be deleted
+	 * @param {function} callback The callback to fire after delete the todo
+	 */
 	Model.prototype.remove = function (id, callback) {
 		var id = id || 0;
 		

@@ -103,6 +103,13 @@
 		}
 	};
 
+	
+	/**
+	 * Will delete a specific element if provided id is found in database
+	 * 
+	 * @param {number} id ID of the element to be deleted 
+	 * @param {function} callback The callback to fire after saving. Will receive updated todos as param
+	 */
 	Store.prototype.remove = function (id, callback) {
 		var data = JSON.parse(localStorage[this._dbName]);
 		var todos = data.todos;

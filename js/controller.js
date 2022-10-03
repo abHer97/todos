@@ -89,6 +89,11 @@
 		});
 	};
 
+	/**
+	 * An event to fire whenever you want to remove an item. 
+	 * 
+	 * @param {number} id ID of todo item to remove
+	 */
 	Controller.prototype.deleteItem = function (id) {
 		var that = this;
 
